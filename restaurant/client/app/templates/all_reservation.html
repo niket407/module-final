@@ -1,0 +1,21 @@
+<hr>
+<table class="table table-striped">
+    <thead>
+    <tr>
+        <th ng-click="mainVm.sort.by= 'name'; mainVm.sort.reverse = !mainVm.sort.reverse;">Name</th>
+        <th ng-click="mainVm.sort.by= 'email'; mainVm.sort.reverse = !mainVm.sort.reverse;">Guests</th>
+        <th ng-click="mainVm.sort.by= 'company.name'; mainVm.sort.reverse = !mainVm.sort.reverse;">Date and Time</th>
+        <th ng-click="mainVm.sort.by= 'website'; mainVm.sort.reverse = !mainVm.sort.reverse;">WebSite</th>
+        <th ng-click="mainVm.sort.by= 'website'; mainVm.sort.reverse = !mainVm.sort.reverse;">Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="cus in mainVm.add_reservation | orderBy:mainVm.sort.by: mainVm.sort.reverse">
+        <td>{{cus.name}}</td>
+        <td>{{cus.guests}}</td>
+        <td>{{cus.datetime}}</td>
+        <td>{{cus.website}}</td>
+        <td>{{cus.actions}}</td>
+    </tr>
+    </tbody>
+</table>
